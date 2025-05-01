@@ -33,6 +33,7 @@ The backend extracts features from key frames. Features are scaled and input to 
 ├── model.pkl            # Trained Xception model + scaler
 
 ├── templates/
+
 │   └── index.html       # Web interface
 
 ├── uploads/             # Uploaded videos (temporary)

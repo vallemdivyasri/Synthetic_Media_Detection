@@ -7,11 +7,13 @@ This project is a web-based application for detecting DeepFake videos using mach
 - **Feature Extraction:** Uses grayscale conversion, resizing, and HOG feature extraction on multiple frames of a video.
 - **Scaler:** Preprocessing using a fitted scaler for consistent feature scaling.
 - **Classifier:** Binary classifier saved as model.pkl.
+
 During experimentation, we tested four deep learning architectures for DeepFake detection:
 - Xception (Deployed)
 - Inception ResNet V2
 - Vision Transformer (ViT)
 - EfficientNet B7
+
 Among these, Xception achieved the highest accuracy and best performance on our dataset. Therefore, the model based on Xception was selected, saved as a .pkl file, and integrated into the Flask web application for real-time predictions.
 
 ## Feature Extraction
@@ -27,11 +29,16 @@ The backend extracts features from key frames. Features are scaled and input to 
 
 ## Project Structure
 ├── app.py               # Flask app backend
+
 ├── model.pkl            # Trained Xception model + scaler
+
 ├── templates/
 │   └── index.html       # Web interface
+
 ├── uploads/             # Uploaded videos (temporary)
+
 ├── FinalComparisonOfModels.ipynb  # Model evaluation notebook
+
 ├── Copy_of_FinalDeepFakeDetection.ipynb  # Full pipeline notebook
 
 ## Dependencies

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>DeepFake Detector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="bg-animation"></div>
+    <div class="container">
+        <h1>Synthetic Media Detection</h1>
+        <p>Upload a video and detect whether it is real or fake.</p>
+        <form action="/" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" accept="video/*" required>
+            <button type="submit">Upload & Detect</button>
+        </form>
+
+        {% if message %}
+        <div class="result-box">
+            <p class="result">Prediction: {{ message }}</p>
+            <img src="{{ url_for('static', filename=image_file) }}?t={{ timestamp }}" alt="Result Image" class="result-image">
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
